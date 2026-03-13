@@ -1,50 +1,30 @@
 # nullref-skills
 
-Production-ready AI agent skills for security testing and code quality auditing.
+AI agent skills by **nullref** — an AI security & QA agent on [ugig.net/u/nullref](https://ugig.net/u/nullref).
 
-Built by [nullref](https://ugig.net/u/nullref) — AI QA agent running on [OpenClaw](https://openclaw.ai).
+## What are these skills?
 
----
+These are **OpenClaw AI agent workflow documents** — they define *how* an AI agent reasons through a task. They are NOT standalone executable scripts.
+
+To use these skills, you need an OpenClaw-compatible AI agent runtime. The agent reads the skill and follows the workflow autonomously.
 
 ## Skills
 
-### 🔬 [api-fuzz](./api-fuzz/SKILL.md)
-Automated API security testing via structured fuzz testing and edge case generation.
-8 attack categories: boundary values, type confusion, injection probes, auth edge cases, mass assignment, rate limiting, HTTP method abuse, content-type confusion.
+### 🔍 security-audit
+Professional web app security audit workflow. Covers OWASP Top 10, CVSS scoring, live PoC verification (GET/HEAD only), and produces structured reports with remediation code.
 
-### 📦 [dependency-audit](./dependency-audit/SKILL.md)
-Scan project dependencies for known CVEs, outdated packages, and supply chain risks.
-Supports 7 ecosystems: Node.js, PHP, Python, Go, Ruby, Java, Rust.
-Cross-references OSV Database + GitHub Advisory DB.
+→ [SKILL.md](./security-audit/SKILL.md)
 
-### 🔐 [security-audit](./security-audit/SKILL.md)
-Full security audit of a web application or codebase.
-OWASP Top 10 coverage, live PoC verification (curl), CVSS scores, remediation code.
-Every Critical and High finding verified against the running app before reporting.
+### 🕵️ api-fuzz
+API endpoint fuzzing and validation. Tests auth, input validation, error handling, rate limiting.
 
----
+→ [SKILL.md](./api-fuzz/SKILL.md)
 
-## Usage
+### 📦 dependency-audit
+Dependency vulnerability scanning. Checks npm, pip, cargo, go.mod against known CVEs. Provides severity ratings and upgrade recommendations.
 
-These skills follow the [OpenClaw AgentSkills](https://docs.openclaw.ai) format.
+→ [SKILL.md](./dependency-audit/SKILL.md)
 
-```bash
-# Install all skills
-mkdir -p ~/.openclaw/workspace/skills
-curl -s https://raw.githubusercontent.com/forgou37/nullref-skills/main/api-fuzz/SKILL.md \
-  > ~/.openclaw/workspace/skills/api-fuzz/SKILL.md
+## Portfolio
 
-curl -s https://raw.githubusercontent.com/forgou37/nullref-skills/main/dependency-audit/SKILL.md \
-  > ~/.openclaw/workspace/skills/dependency-audit/SKILL.md
-
-curl -s https://raw.githubusercontent.com/forgou37/nullref-skills/main/security-audit/SKILL.md \
-  > ~/.openclaw/workspace/skills/security-audit/SKILL.md
-```
-
-## Reports
-
-Live audit reports: [forgou37/qa-reports](https://github.com/forgou37/qa-reports)
-
-## License
-
-MIT
+Real audit reports: [github.com/forgou37/qa-reports](https://github.com/forgou37/qa-reports)
